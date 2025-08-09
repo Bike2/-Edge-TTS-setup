@@ -2,11 +2,11 @@
 A step-by-step guide to installing and using Edge-TTS, Microsoft’s Neural Text-to-Speech engine, with custom voices, rate/pitch control, and support for long text.
 
 ## Features
-100+ Microsoft Neural voices
-Control rate (speed) and pitch
-Read from text files or inline text
-Save output MP3s directly to Windows folders
-Works inside WSL/Ubuntu
+100+ Microsoft Neural voices, 
+Control rate (speed) and pitch, 
+Read from text files or inline text, 
+Save output MP3s directly to Windows folders, 
+Works inside WSL/Ubuntu, 
 Fully offline virtual environment (no system pollution)
 
 ## Requirements
@@ -149,8 +149,7 @@ Press Ctrl+X, then Y, Then press enter to save
 ```
  python3 edge_tts_tool.py list --limit 20
 ```
-
-# List English Voices
+List English Voices
 ```
 python3 edge_tts_tool.py list --filter en-
 ```
@@ -172,30 +171,30 @@ mpg123 test.mp3
 ```
 
 ## 9)  Make the Audio File download on windows, and also add Rate and Pitch (How fast/slow and how high you want the audio to be)
-# A) For it to download to window
+A) For it to download to window
 ```
 nano edge_tts_tool.py
 ```
-# Find this 
+Find this 
 ```
 sx.add_argument("--outfile", default="output.mp3", help="Output audio file (.mp3 recommended)")
 ```
-# Replace it with this
+Replace it with this
 ```
 sx.add_argument("--outfile", default="/mnt/c/Users/MSI/Downloads/output.mp3", help="Output audio file (.mp3 recommended)")
 ```
 Press Ctrl+X, then Y, Then press enter to save
 
-# B) Add Rate and Pitch
+B) Add Rate and Pitch
 ```
 nano edge_tts_tool.py
 ```
-# Find this 
+Find this 
 ```
 sx.add_argument("--rate", default="+0%", help="Speech rate, e.g. +10% or -10%")
 sx.add_argument("--pitch", default="+0Hz", help="Pitch, e.g. +2Hz or -2Hz")
 ```
-# Replace it with this
+Replace it with this
 ```
 sx.add_argument("--rate", type=str, default="+0%", help="Speech rate, e.g. +10% or -10%")
 sx.add_argument("--pitch", type=str, default="+0Hz", help="Pitch, e.g. +2Hz or -2Hz")
@@ -210,18 +209,18 @@ python3 edge_tts_tool.py say \
   --rate="rate%" \
   --pitch="pitchHz"
 ```
-# Where you would replace <Voice> with the voice you want to you for the speech, same with Text, for rate and pitch, it should be like the --rate="+5%" \ or --pitch="-60Hz"
+Where you would replace <Voice> with the voice you want to you for the speech, same with Text, for rate and pitch, it should be like the --rate="+5%" \ or --pitch="-60Hz"
 
 ## 11) Creating a Long Text to speech
-# Open Nano:
+Open Nano:
 ```
 nano myscript.txt
 ```
 
-# Type or paste your long form text  
+Type or paste your long form text  
 Press Ctrl+X, then Y, Then press enter to save
 
-# Now, lets run it
+Now, lets run it
 ```
 python3 edge_tts_tool.py say \
 --voice <VoiceName> \
@@ -230,23 +229,23 @@ python3 edge_tts_tool.py say \
 --infile myscript.txt \
 --outfile /mnt/c/Users/USERPROFILE/Downloads/myspeech.mp3
 ```
-# Remember to always rename your file after it gets downloaded, so it wont be replaced when you run a new one
+Remember to always rename your file after it gets downloaded, so it wont be replaced when you run a new one
 
 ## 12) How to Get back in after a restart
-# Enter Directory
+Enter Directory
 ```
 cd ~/tts
 ```
-# Activate your virtual environment
+Activate your virtual environment
 ```
 source .venv/bin/activate
 ```
-# Run a script to be sure 
+Run a script to be sure 
 ```
 python3 edge_tts_tool.py list --filter en-
 ```
 This to show English voice
-# OR
+OR
 ```
 python3 edge_tts_tool.py say --voice en-US-GuyNeural --text "Back after restart"
 ```
