@@ -256,3 +256,9 @@ OR
 python3 edge_tts_tool.py say --voice en-US-GuyNeural --text "Back after restart"
 ```
 To get this audio out.
+
+## Disclaimer
+This repository and guide are for educational purposes only.
+Microsoft Edge TTS is an online service provided by Microsoft, and its availability, supported voices, and usage limits are subject to change at any time by Microsoft.
+Users are responsible for ensuring their use complies with all applicable laws, regulations, and Microsoft’s terms of service.
+The author of this guide is not affiliated with Microsoft and assumes no liability for how this software or service is used.
