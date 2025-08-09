@@ -201,7 +201,13 @@ sx.add_argument("--pitch", type=str, default="+0Hz", help="Pitch, e.g. +2Hz or -
 ```
 Press Ctrl+X, then Y, Then press enter to save
 
-## 10) Lets Try out a Text
+## 10) To find your "UserProfile"/Windows Name
+Open Command prompt, type this code
+```
+whoami
+```
+
+## 11) Lets Try out a Text
 ```
 python3 edge_tts_tool.py say \
   --voice <VoiceName> \
@@ -211,13 +217,13 @@ python3 edge_tts_tool.py say \
 ```
 Where you would replace <Voice> with the voice you want to you for the speech, same with Text, for rate and pitch, it should be like the --rate="+5%" \ or --pitch="-60Hz"
 
-## 11) Creating a Long Text to speech
+## 12) Creating a Long Text to speech
 Open Nano:
 ```
 nano myscript.txt
 ```
 
-Type or paste your long form text  
+# Type or paste your long form text  
 Press Ctrl+X, then Y, Then press enter to save
 
 Now, lets run it
@@ -231,7 +237,7 @@ python3 edge_tts_tool.py say \
 ```
 Remember to always rename your file after it gets downloaded, so it wont be replaced when you run a new one
 
-## 12) How to Get back in after a restart
+## 13) How to Get back in after a restart
 Enter Directory
 ```
 cd ~/tts
